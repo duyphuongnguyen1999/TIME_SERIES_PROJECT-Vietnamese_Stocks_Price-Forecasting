@@ -231,14 +231,3 @@ class TimeSeriesDataLoader:
         y_tensor = torch.tensor(y, dtype=torch.float32)
         dataset = TensorDataset(X_tensor, y_tensor)
         return DataLoader(dataset, batch_size=self.batch_size, shuffle=True)
-
-
-if __name__ == __main__:
-    FPT_object = TimeSeriesDataLoader(
-        file_path="FPT.csv",
-        input_size=30,
-        label_size=1,
-        offset=1,
-        train_size=0.7,
-        val_size=0.2,
-    )
